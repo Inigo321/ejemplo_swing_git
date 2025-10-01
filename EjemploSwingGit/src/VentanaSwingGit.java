@@ -107,43 +107,38 @@ public class VentanaSwingGit extends JFrame {
 		
 		datosPersonales.add(informacionPersonal);
 		
-		JPanel informacionAdicional = new JPanel();
-		informacionAdicional.setLayout(new BoxLayout(informacionAdicional, BoxLayout.Y_AXIS)); // uno debajo del otro
+		JPanel informacionAdicional = new JPanel(new GridLayout(4, 2));
 		TitledBorder tituloInformacionAdicional = BorderFactory.createTitledBorder("Información adicional");
 		informacionAdicional.setBorder(tituloInformacionAdicional);
 		
 		// Teléfono
-		JPanel filaTelefono = new JPanel(new FlowLayout());
-		filaTelefono.add(new JLabel("Teléfono:"));
+		JLabel labelTelefono = new JLabel("Teléfono:");
+		informacionAdicional.add(labelTelefono);
 		JTextField telefono = new JTextField(15);
-		filaTelefono.add(telefono);
-		informacionAdicional.add(filaTelefono);
+		informacionAdicional.add(telefono);
 
 		// Dirección
-		JPanel filaDireccion = new JPanel(new FlowLayout());
-		filaDireccion.add(new JLabel("Dirección:"));
+		JLabel labelDireccion = new JLabel("Dirección:");
+		informacionAdicional.add(labelDireccion);
 		JTextField direccion = new JTextField(15);
-		filaDireccion.add(direccion);
-		informacionAdicional.add(filaDireccion);
+		informacionAdicional.add(direccion);
 
 		// Ciudad
-		JPanel filaCiudad = new JPanel(new FlowLayout());
-		filaCiudad.add(new JLabel("Ciudad:"));
+		JLabel labelCiudad = new JLabel("Ciudad:");
+		informacionAdicional.add(labelCiudad);
 		JTextField ciudad = new JTextField(15);
-		filaCiudad.add(ciudad);
-		informacionAdicional.add(filaCiudad);
+		informacionAdicional.add(ciudad);
 
 		// País (JComboBox)
-		JPanel filaPais = new JPanel(new FlowLayout());
-		filaPais.add(new JLabel("País:"));
+		JLabel labelPais = new JLabel("País:");
+		informacionAdicional.add(labelPais);
 		JComboBox<String> pais = new JComboBox<>();
 		
 		for (int i = 0; i < paises.length; i++) {
 			pais.addItem(paises[i]);
 		}
 		
-		filaPais.add(pais);
-		informacionAdicional.add(filaPais);
+		informacionAdicional.add(pais);
 		
 		datosPersonales.add(informacionAdicional);
 		
